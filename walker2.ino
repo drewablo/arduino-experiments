@@ -1,0 +1,17 @@
+#include <Servo.h>
+Servo frontservo,backservo;
+char forward[] = {60,100,100,100,100,60,60,60};
+void setup()
+{
+frontservo.attach(9);
+backservo.attach(10);
+}
+void loop()
+{
+for(int n=0;n<4;n++)
+{
+frontservo.write(forward[2*n]);
+backservo.write(forward[(2*n)+1]);
+delay(300);
+}
+} 
